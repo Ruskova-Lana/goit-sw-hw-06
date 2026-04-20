@@ -18,6 +18,19 @@
 - Faker
 - Docker
 
-## Запуск PostgreSQL
-```bash
+
+## Run project
+1. Start PostgreSQL:
 docker run --name my-postgres-db -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+
+2. Install dependencies:
+pip install -r requirements.txt
+
+3. Run migrations:
+alembic upgrade head
+
+4. Seed database:
+python seed.py
+
+5. Run queries:
+python main.py
